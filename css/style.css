@@ -1,10 +1,16 @@
-* {
+html {
   box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after{
+  box-sizing: inherit;
 }
 
 #piano {
   background-color: #00471B;
-  width: 700px;
+  width: 967px;
   height: 300px;
   border-radius: 10px;
   margin: 100px auto;
@@ -13,60 +19,37 @@
 
 #keys-container {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   margin: 30px auto auto;
+  overflow: hidden;
   background-color: #040404;
-  width: 660px;
+  width: 927px;
   height: 200px;
-  border: 3px solid #040404;
 
 }
-.container {
+
+
+.key {
   position: relative;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-.white-key {
-  margin-right: 3px;
-  width: calc(615px / 14) ;
+  width: 41px;
   height: 100%;
   background-color: #FFFFFF;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
 }
 
-.black-key {
+.key.black-key::before {
+  /*Absolute positioning changes the display for inline / inline-block to block*/
   position: absolute;
-  z-index: 99;
+  left: -17px;
+  content: "";
+  background-color: #1d1e22;
   height: 60%;
-  width: 30px;
-  background-color: #1D1E22;
+  width: 32px;
 }
 
 
-.two-black-keys .one {
-  top: 0;
-  left: 30px;
-}
 
-.two-black-keys .two {
-  top: 0;
-  left: 78px;
-  }
-
-.three-black-keys .one {
-  top: 0;
-  left: 30px;
-}
-
-.three-black-keys .two {
-  top: 0;
-  left: 78px;
-}
-
-.three-black-keys .three {
-  top: 0;
-  left: 125px;
-}
+/*TODO: Make the page responsive*/
 
