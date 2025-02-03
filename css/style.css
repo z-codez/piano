@@ -20,13 +20,14 @@ html {
 #keys-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin: 30px auto auto;
+  /*justify-content: space-evenly;*/
   overflow: hidden;
+  gap: 3px;
+  margin: 30px auto auto;
   background-color: #040404;
   width: 927px;
   height: 200px;
-
+  padding-left: 3px;
 }
 
 
@@ -51,5 +52,22 @@ html {
 
 
 
-/*TODO: Make the page responsive*/
+@media (max-width: 1166px) and (min-width: 769px) {
+  #piano {
+    width: 667px;
+  }
 
+  #keys-container {
+    width: 619px;
+  }
+}
+
+@media (max-width: 768px) {
+  #piano {
+    width: 367px;
+  }
+
+  #keys-container {
+    width: 311px;
+  }
+}
